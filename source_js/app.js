@@ -6,17 +6,10 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'partials/firstview.html',
     controller: 'FirstController'
   }).
-  when('/secondview', {
-    templateUrl: 'partials/secondview.html',
-    controller: 'SecondController'
-  }).
-  when('/settings', {
-    templateUrl: 'partials/settings.html',
-    controller: 'SettingsController'
-  }).
-  when('/llamalist', {
-    templateUrl: 'partials/llamalist.html',
-    controller: 'LlamaListController'
+      //todo
+  when('/houses/:id', {
+    templateUrl: '',
+    controller: 'TaskController'
   }).
   otherwise({
     redirectTo: '/settings'
