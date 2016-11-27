@@ -45,3 +45,10 @@ mp4Controllers.controller('SettingsController', ['$scope' , '$window' , function
   };
 
 }]);
+
+mp4Controllers.constructor('HouseDetailView', ['$scope', '$window', '$routeParams', 'HousesGateway', function($scope, $window, rp, HousesGateway){
+  var id = rp.id;
+  HousesGateway.getOne(id).success(function(data){
+    $scope.house = data.data;
+  });
+}]);
