@@ -1,27 +1,24 @@
-var app = angular.module('mp4', ['ngRoute', 'mp4Controllers', 'mp4Services', '720kb.datepicker']);
+var app = angular.module('mp4', ['ngRoute', 'mp4Controllers', 'mp4Services', '720kb.datepicker', 'uiGmapgoogle-maps']);
+// .config(
+    // ['uiGmapGoogleMapApiProvider', function(GoogleMapApiProviders) {
+    //     GoogleMapApiProviders.configure({
+    //         key: "AIzaSyB36qymfkWQerKp4IlgC0VO3kpMYOCett4",
+    //         v: '3.20', //defaults to latest 3.X anyhow
+    //         libraries: 'weather,geometry,visualization'
+    //     });
+    // }]);
 
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-<<<<<<< HEAD
-    when('/firstview', {
-    templateUrl: 'partials/firstview.html',
-    controller: 'FirstController'
-  }).
-      //todo
   when('/houses/:id', {
-    templateUrl: '',
-    controller: 'TaskController'
-=======
-    when('/houses', {
-    templateUrl: 'partials/houses.html',
-    controller: 'housesController'
->>>>>>> 33f51a1b378e7fb9633af06cae5746a78fcba9d1
+    templateUrl: 'partials/house_details.html',
+    controller: 'HouseDetailView'
   }).
-    when('/housedetails/:houseID',{
-    	templateUrl: 'partials/house_details.html',
-    	controler:'houseDetailsController'
-    }).
+  when('/houses',{
+  	templateUrl: 'partials/houses.html',
+  	controller:'HouseListView'
+  }).
   otherwise({
     redirectTo: '/houses'
   });
