@@ -1,5 +1,11 @@
 var mp4Controllers = angular.module('mp4Controllers', []);
 
+mp4Controllers.controller('LogInView', ['$scope', function($scope){
+  $scope.slideleft = function(){
+    jq('#textbox').animate({'marginLeft':"0"});
+    jq('.toplam').animate({'marginLeft': "100%"});
+  };
+}]);
 
 mp4Controllers.controller('HouseListView', ['$scope','$window','$routeParams', 'HousesGateway', function($scope, $window, rp, HousesGateway){
   $scope.select = {

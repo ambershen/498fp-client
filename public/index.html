@@ -13,6 +13,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
     <link href="./lib/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
 
     <!-- Angular Scripts -->
@@ -28,6 +29,7 @@
 </head>
 
 <body ng-app="mp4">
+<!--
 <h5 class="align-left">PillowFinder</h5>
 <ul class="menu align-right">
 
@@ -36,6 +38,7 @@
 <li><a href="#">Sublet</a></li>
 <li><a href="#">Sublease</a></li>
 </ul>
+-->
     <div ng-view></div>
 
     <!-- Scripts -->
@@ -49,6 +52,31 @@
 <script src="//maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyB36qymfkWQerKp4IlgC0VO3kpMYOCett4"></script> -->
     <script>
         $(document).foundation();
+            $(document).ready(function(){
+                $('.form-control').on('focus blur', function (e) {
+                $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
+                }).trigger('blur');
+
+                $('#moveleft').on("click", function(){
+                    $('#textbox').animate({
+                        'marginLeft':"0"
+                    });
+                    $('.toplam').animate({
+                        'marginLeft': "100%"
+                    });
+                    alert("success");
+                });
+
+                $('#moveright').on("click",function(){
+                    $('#textbox').animate({
+                        'marginLeft': "50%"
+                    });
+                    $('.toplam').animate({
+                        'marginLeft': "0"
+                    });
+                    alert("success");
+                });
+});
     </script>
     <script src="http://localhost:35729/livereload.js"></script>
 </body>

@@ -1,1 +1,34 @@
 // Insert your mixins
+@import "variables";
+
+@mixin display(){
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+}
+
+@mixin transition($transition){
+	transition: $transition;
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-o-transition: $transition;
+}
+@mixin shadow($shadow_1, $shadow_2){
+	box-shadow:$shadow_1, $shadow_2;
+	-webkit-box-shadow:$shadow_1, $shadow_2;
+	-moz-box-shadow:$shadow_1, $shadow_2;
+	-o-box-shadow:$shadow_1, $shadow_2;
+}
+@mixin transform($transform){
+	transform: $transform;
+	-ms-transform: $transform;
+	-webkit-transform: $transform;
+}
+
+@mixin transform-origin($transform){
+	transform-origin: $transform;
+	-webkit-transform-origin: $transform;
+	-moz-transform-origin: $transform;
+	-o-transform-origin: $transform;
+}

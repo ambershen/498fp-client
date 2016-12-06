@@ -19,7 +19,10 @@ app.config(['$routeProvider', function($routeProvider) {
   	templateUrl: 'partials/houses.html',
   	controller:'HouseListView'
   }).
+  when('/login',{
+    templateUrl: 'partials/login.html',
+  }).
   otherwise({
-    redirectTo: '/houses'
+    redirectTo: '/login'
   });
 }]);
